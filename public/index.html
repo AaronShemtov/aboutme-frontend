@@ -243,21 +243,24 @@
         height: 112px;
         width: auto;
       }
-      @media (max-width: 560px) {
-        .certs {
-          gap: 18px;
-        }
-        .certs img {
-          height: 84px;
-        }
+      /* ISTQB is a navy wordmark rather than a self-contained badge, and navy
+     on the dark theme is unreadable, so it gets a white tile in both. */
+      .certs img.cert-tile {
+        padding: 10px 12px;
+        background: #fff;
+        border: 1px solid var(--line-2);
+        border-radius: 10px;
       }
-      /* 320px phones: keep all three on one row. */
-      @media (max-width: 360px) {
+      /* Below the width where all four fit on one row, a 2x2 grid instead of
+     three plus one left hanging. */
+      @media (max-width: 640px) {
         .certs {
-          gap: 14px;
+          display: grid;
+          grid-template-columns: repeat(2, max-content);
+          gap: 18px 24px;
         }
         .certs img {
-          height: 72px;
+          height: 96px;
         }
       }
     </style>
@@ -504,6 +507,17 @@
               decoding="async"
               alt="Kubernetes and Cloud Native Associate"
               title="Kubernetes and Cloud Native Associate (KCNA)"
+            />
+          </li>
+          <li>
+            <img
+              class="cert-tile"
+              src="/badges/istqb-certified-tester-foundation-level.png"
+              width="110"
+              height="90"
+              decoding="async"
+              alt="ISTQB Certified Tester Foundation Level"
+              title="ISTQB Certified Tester Foundation Level (CTFL)"
             />
           </li>
         </ul>
