@@ -216,6 +216,50 @@
           margin-top: 24px;
         }
       }
+
+      /* Certification badges under the profile text. The PNGs are 2x and
+     transparent outside the artwork, so they sit on either theme with no
+     card behind them. */
+      .certs-label {
+        margin: 28px 0 14px;
+        font-family: var(--mono);
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--mute);
+      }
+      .certs {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 28px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .certs img {
+        display: block;
+        height: 112px;
+        width: auto;
+      }
+      @media (max-width: 560px) {
+        .certs {
+          gap: 18px;
+        }
+        .certs img {
+          height: 84px;
+        }
+      }
+      /* 320px phones: keep all three on one row. */
+      @media (max-width: 360px) {
+        .certs {
+          gap: 14px;
+        }
+        .certs img {
+          height: 72px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -429,6 +473,40 @@
             quality gates across backend, mobile and frontend systems.
           </p>
         </div>
+
+        <h3 class="certs-label">Certifications</h3>
+        <ul class="certs">
+          <li>
+            <img
+              src="/badges/oracle-oci-foundations-associate-2026.png"
+              width="105"
+              height="112"
+              decoding="async"
+              alt="Oracle Certified Foundations Associate: Oracle Cloud Infrastructure 2026"
+              title="Oracle Cloud Infrastructure 2026 Certified Foundations Associate"
+            />
+          </li>
+          <li>
+            <img
+              src="/badges/linux-foundation-certified-it-associate.png"
+              width="135"
+              height="112"
+              decoding="async"
+              alt="The Linux Foundation Certified IT Associate"
+              title="Linux Foundation Certified IT Associate (LFCA)"
+            />
+          </li>
+          <li>
+            <img
+              src="/badges/kcna-kubernetes-cloud-native-associate.png"
+              width="116"
+              height="112"
+              decoding="async"
+              alt="Kubernetes and Cloud Native Associate"
+              title="Kubernetes and Cloud Native Associate (KCNA)"
+            />
+          </li>
+        </ul>
       </section>
 
       <!-- CORE SKILLS -->
