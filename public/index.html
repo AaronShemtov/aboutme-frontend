@@ -324,6 +324,15 @@
           gap: 4px 14px;
         }
       }
+
+      /* With the Profile heading hidden, the text sits as far under the hero
+     divider as the hero content sits above it: the hero's own 36px. */
+      #profile {
+        padding-top: 36px;
+      }
+      #profile .hero-text > p:first-child {
+        margin-top: 0;
+      }
     </style>
   </head>
   <body>
@@ -541,10 +550,8 @@
       <!-- PROFILE -->
       <section class="block" id="profile" aria-label="Profile">
         <!-- HIDDEN: "Profile" heading. To restore, delete this line and
-          the closing line after the heading, and number the sections
-          from 01 again.
+          the closing line after the heading.
         <div class="sec-head">
-          <span class="sec-num">01 ·</span>
           <h2 class="sec-title">Profile</h2>
         </div>
         END HIDDEN: "Profile" heading -->
@@ -620,10 +627,8 @@
       <!-- CORE SKILLS -->
       <section class="block" id="skills" aria-label="Core skills">
         <!-- HIDDEN: "Core skills" heading. To restore, delete this line and
-          the closing line after the heading, and number the sections
-          from 01 again.
+          the closing line after the heading.
         <div class="sec-head">
-          <span class="sec-num">02 ·</span>
           <h2 class="sec-title">Core skills</h2>
         </div>
         END HIDDEN: "Core skills" heading -->
@@ -722,7 +727,7 @@
       <!-- EXPERIENCE — one line per role; the detail lives in the PDF CV. -->
       <section class="block" id="experience">
         <div class="sec-head">
-          <span class="sec-num">01 ·</span>
+          <!-- HIDDEN: section number. <span class="sec-num">01 ·</span> -->
           <h2 class="sec-title">Professional experience</h2>
         </div>
         <p class="sec-sub">
@@ -764,7 +769,6 @@
      use id="experience"). Its styles and script are still in place.
       <section class="block" id="experience">
         <div class="sec-head">
-          <span class="sec-num">01 ·</span>
           <h2 class="sec-title">Professional experience</h2>
         </div>
         <p class="sec-sub">
@@ -1106,7 +1110,7 @@
       <!-- EDUCATION & LANGUAGES -->
       <section class="block" id="education">
         <div class="sec-head">
-          <span class="sec-num">02 ·</span>
+          <!-- HIDDEN: section number. <span class="sec-num">02 ·</span> -->
           <h2 class="sec-title">Education &amp; languages</h2>
         </div>
 
