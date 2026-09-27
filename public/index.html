@@ -333,6 +333,26 @@
       #profile .hero-text > p:first-child {
         margin-top: 0;
       }
+
+      /* Sections sit 40px apart. Without their headings the page no longer
+     needs blueprint's 64px, and the skills block's own label and grid
+     margins stacked on top of it made the gaps uneven (100, 92, 64px).
+     The last section keeps 64px so the page does not end against the edge. */
+      section.block {
+        padding-bottom: 40px;
+      }
+      section.block:last-of-type {
+        padding-bottom: 64px;
+      }
+      #skills .kpi-heading {
+        margin-top: 0;
+      }
+      /* The "Stack & tooling" label sits as close over the grid as a section
+     heading does over its content, so it reads as the grid's title rather
+     than floating between two blocks. */
+      #skills .kpi {
+        margin: 14px 0 0;
+      }
     </style>
   </head>
   <body>
@@ -730,10 +750,13 @@
           <!-- HIDDEN: section number. <span class="sec-num">01 ·</span> -->
           <h2 class="sec-title">Professional experience</h2>
         </div>
+        <!-- HIDDEN: experience subtitle, which carried the page's last link to
+          the PDF CV. To restore, delete this line and the closing line after it.
         <p class="sec-sub">
           Fourteen years across DevOps, SRE and QA. The full detail is in the
           <a href="/Aaron_Shemtov_CV_DevOps.pdf" download>CV</a>.
         </p>
+        END HIDDEN: experience subtitle -->
         <ol class="timeline">
           <li>
             <span class="tl-years">2024 — present</span>
