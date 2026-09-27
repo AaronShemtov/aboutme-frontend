@@ -235,8 +235,11 @@
         align-items: center;
         gap: 28px;
         list-style: none;
-        margin: 0;
+        margin: 28px 0 0;
         padding: 0;
+      }
+      .certs-label + .certs {
+        margin-top: 0;
       }
       .certs img {
         display: block;
@@ -536,11 +539,15 @@
       </section>
 
       <!-- PROFILE -->
-      <section class="block" id="profile">
+      <section class="block" id="profile" aria-label="Profile">
+        <!-- HIDDEN: "Profile" heading. To restore, delete this line and
+          the closing line after the heading, and number the sections
+          from 01 again.
         <div class="sec-head">
           <span class="sec-num">01 ·</span>
           <h2 class="sec-title">Profile</h2>
         </div>
+        END HIDDEN: "Profile" heading -->
         <div class="hero-text" style="max-width: 820px">
           <p>
             DevOps Engineer with 14+ years of experience across production
@@ -561,7 +568,10 @@
           </p>
         </div>
 
+        <!-- HIDDEN: "Certifications" label. To restore, delete this line and
+          the closing line after the label.
         <h3 class="certs-label">Certifications</h3>
+        END HIDDEN: "Certifications" label -->
         <ul class="certs">
           <li>
             <img
@@ -608,11 +618,15 @@
       </section>
 
       <!-- CORE SKILLS -->
-      <section class="block" id="skills">
+      <section class="block" id="skills" aria-label="Core skills">
+        <!-- HIDDEN: "Core skills" heading. To restore, delete this line and
+          the closing line after the heading, and number the sections
+          from 01 again.
         <div class="sec-head">
           <span class="sec-num">02 ·</span>
           <h2 class="sec-title">Core skills</h2>
         </div>
+        END HIDDEN: "Core skills" heading -->
 
         <div class="kpi-heading">
           <span class="kpi-rule"></span>
@@ -708,7 +722,7 @@
       <!-- EXPERIENCE — one line per role; the detail lives in the PDF CV. -->
       <section class="block" id="experience">
         <div class="sec-head">
-          <span class="sec-num">03 ·</span>
+          <span class="sec-num">01 ·</span>
           <h2 class="sec-title">Professional experience</h2>
         </div>
         <p class="sec-sub">
@@ -750,7 +764,7 @@
      use id="experience"). Its styles and script are still in place.
       <section class="block" id="experience">
         <div class="sec-head">
-          <span class="sec-num">03 ·</span>
+          <span class="sec-num">01 ·</span>
           <h2 class="sec-title">Professional experience</h2>
         </div>
         <p class="sec-sub">
@@ -1092,7 +1106,7 @@
       <!-- EDUCATION & LANGUAGES -->
       <section class="block" id="education">
         <div class="sec-head">
-          <span class="sec-num">04 ·</span>
+          <span class="sec-num">02 ·</span>
           <h2 class="sec-title">Education &amp; languages</h2>
         </div>
 
