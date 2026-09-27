@@ -263,6 +263,64 @@
           height: 96px;
         }
       }
+
+      /* Experience as one line per role: years, title, company. Same mono
+     type and hairlines as the accordion it replaces. */
+      .timeline {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid var(--line);
+      }
+      .timeline li {
+        display: grid;
+        grid-template-columns: 140px minmax(0, 1fr) 180px;
+        grid-template-areas: "years role org";
+        gap: 18px;
+        align-items: baseline;
+        padding: 16px 4px;
+        border-bottom: 1px solid var(--line);
+      }
+      .tl-years {
+        grid-area: years;
+        font-family: var(--mono);
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        color: var(--mute);
+      }
+      .timeline li:first-child .tl-years {
+        color: var(--accent);
+      }
+      .tl-role {
+        grid-area: role;
+        font-family: var(--mono);
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        color: var(--ink);
+      }
+      .tl-org {
+        grid-area: org;
+        font-family: var(--mono);
+        font-size: 12.5px;
+        color: var(--mute);
+      }
+      /* Company names match whether or not they link somewhere. */
+      .tl-org a {
+        color: inherit;
+      }
+      .tl-org a:hover {
+        color: var(--accent);
+      }
+      @media (max-width: 640px) {
+        .timeline li {
+          grid-template-columns: auto minmax(0, 1fr);
+          grid-template-areas:
+            "role role"
+            "years org";
+          gap: 4px 14px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -626,7 +684,49 @@
         </div>
       </section>
 
-      <!-- EXPERIENCE -->
+      <!-- EXPERIENCE — one line per role; the detail lives in the PDF CV. -->
+      <section class="block" id="experience">
+        <div class="sec-head">
+          <span class="sec-num">03 ·</span>
+          <h2 class="sec-title">Professional experience</h2>
+        </div>
+        <p class="sec-sub">
+          Fourteen years across DevOps, SRE and QA. The full detail is in the
+          <a href="/Aaron_Shemtov_CV_DevOps.pdf" download>CV</a>.
+        </p>
+        <ol class="timeline">
+          <li>
+            <span class="tl-years">2024 — present</span>
+            <span class="tl-role">DevOps &amp; SRE Engineer</span>
+            <span class="tl-org"><a href="https://itoutposts.com/" target="_blank" rel="noopener">IT Outposts</a></span>
+          </li>
+          <li>
+            <span class="tl-years">2019 — 2024</span>
+            <span class="tl-role">Manual &amp; Automation QA Engineer</span>
+            <span class="tl-org"><a href="https://www.moonactive.com/" target="_blank" rel="noopener">Moon Active</a></span>
+          </li>
+          <li>
+            <span class="tl-years">2017 — 2019</span>
+            <span class="tl-role">Production / Site Reliability Engineer</span>
+            <span class="tl-org"><a href="https://star.global/" target="_blank" rel="noopener">Star</a></span>
+          </li>
+          <li>
+            <span class="tl-years">2015 — 2017</span>
+            <span class="tl-role">QA Engineer &amp; Release Manager</span>
+            <span class="tl-org"><a href="https://star.global/" target="_blank" rel="noopener">Star</a></span>
+          </li>
+          <li>
+            <span class="tl-years">2012 — 2015</span>
+            <span class="tl-role">Manual QA Engineer</span>
+            <span class="tl-org">SECL Group</span>
+          </li>
+        </ol>
+      </section>
+
+      <!-- EXPERIENCE, FULL — every role with its detail, kept for later.
+     To bring it back: delete this opening line and the closing line at the
+     end of the block, then delete the one-line timeline section above (both
+     use id="experience"). Its styles and script are still in place.
       <section class="block" id="experience">
         <div class="sec-head">
           <span class="sec-num">03 ·</span>
@@ -966,6 +1066,7 @@
           </div>
         </article>
       </section>
+      END OF EXPERIENCE, FULL -->
 
       <!-- EDUCATION & LANGUAGES -->
       <section class="block" id="education">
